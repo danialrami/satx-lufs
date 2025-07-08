@@ -1323,3 +1323,46 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+/* Add this to your existing CSS - nested list styling for experience section */
+
+.experience-list ul {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.experience-list ul li {
+    margin-bottom: 0.5rem;
+    padding-left: 2rem; /* Extra indent for sub-items */
+    position: relative;
+    font-size: 0.9rem; /* Slightly smaller for sub-items */
+    line-height: 1.4;
+    color: rgba(251, 249, 226, 0.9); /* Slightly dimmed color */
+}
+
+.experience-list ul li::before {
+    content: '';
+    position: absolute;
+    left: 0.5rem; /* Offset the bullet point */
+    top: 0.5rem;
+    width: 6px; /* Smaller bullet for sub-items */
+    height: 6px;
+    background-color: var(--yellow); /* Different color for sub-items */
+    border-radius: 50%;
+}
+
+.experience-list ul li:hover {
+    transform: translateX(3px); /* Less movement for sub-items */
+}
+
+/* Optional: Add a connecting line for better visual hierarchy */
+.experience-list > li:has(ul)::after {
+    content: '';
+    position: absolute;
+    left: 0.25rem;
+    top: 1.2rem;
+    width: 1px;
+    height: calc(100% - 1.2rem);
+    background-color: rgba(120, 186, 186, 0.3);
+}
